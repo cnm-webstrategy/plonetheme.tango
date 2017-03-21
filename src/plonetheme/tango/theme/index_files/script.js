@@ -155,66 +155,7 @@ $document.ready(function() {
         if (isIE === 11) { $("html").addClass("ie-11"); }
         if (isIE === 12) { $("html").addClass("ie-edge"); }
     }
-    if (plugins.swiper.length) {
-        plugins.swiper.each(function() {
-            var s = $(this);
-            var pag = s.find(".swiper-pagination"),
-                next = s.find(".swiper-button-next"),
-                prev = s.find(".swiper-button-prev"),
-                bar = s.find(".swiper-scrollbar"),
-                h = getSwiperHeight(plugins.swiper, "height"),
-                mh = getSwiperHeight(plugins.swiper, "min-height"),
-                parallax = s.parents('.rd-parallax').length;
-            s.find(".swiper-slide").each(function() {
-                var $this = $(this),
-                    url;
-                if (url = $this.attr("data-slide-bg")) { $this.css({ "background-image": "url(" + url + ")", "background-size": "cover" }) } }).end().find("[data-caption-animate]").addClass("not-animated").end().swiper({
-                autoplay: s.attr('data-autoplay') === "true" ? 5000 : false,
-                direction: s.attr('data-direction') ? s.attr('data-direction') : "horizontal",
-                effect: s.attr('data-slide-effect') ? s.attr('data-slide-effect') : "fade",
-                speed: s.attr('data-slide-speed') ? s.attr('data-slide-speed') : 600,
-                keyboardControl: s.attr('data-keyboard') === "true",
-                mousewheelControl: s.attr('data-mousewheel') === "true",
-                mousewheelReleaseOnEdges: s.attr('data-mousewheel-release') === "true",
-                nextButton: next.length ? next.get(0) : null,
-                prevButton: prev.length ? prev.get(0) : null,
-                pagination: pag.length ? pag.get(0) : null,
-                simulateTouch: false,
-                paginationClickable: pag.length ? pag.attr("data-clickable") !== "false" : false,
-                paginationBulletRender: pag.length ? pag.attr("data-index-bullet") === "true" ? function(index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + '</span>'; } : null : null,
-                scrollbar: bar.length ? bar.get(0) : null,
-                scrollbarDraggable: bar.length ? bar.attr("data-draggable") !== "false" : true,
-                scrollbarHide: bar.length ? bar.attr("data-draggable") === "false" : false,
-                loop: s.attr('data-loop') !== "false",
-                loopAdditionalSlides: 0,
-                loopedSlides: 0,
-                onTransitionStart: function(swiper) { toggleSwiperInnerVideos(swiper); },
-                onTransitionEnd: function(swiper) { toggleSwiperCaptionAnimation(swiper);
-                    $(window).trigger("resize"); },
-                onInit: function(swiper) {
-                    if (plugins.pageLoader.length) {
-                        var srcFirst = $("#page-loader").attr("data-slide-bg"),
-                            image = document.createElement('img');
-                        image.src = srcFirst;
-                        image.onload = function() { plugins.pageLoader.addClass("loaded"); }; }
-                    toggleSwiperInnerVideos(swiper);
-                    toggleSwiperCaptionAnimation(swiper);
-                    s.find(".swiper-parallax").each(function() {
-                        var $this = $(this),
-                            speed;
-                        if (parallax && !isIE && !isMobile) {
-                            if (speed = $this.attr("data-speed")) { makeParallax($this, speed, s, false); } } });
-                    $(window).on('resize', function() { swiper.update(true); })
-                },
-            });
-            $(window).on("resize", function() {
-                var mh = getSwiperHeight(s, "min-height"),
-                    h = getSwiperHeight(s, "height");
-                if (h) { s.css("height", mh ? mh > h ? mh : h : h); } }).load(function() { s.find("video").each(function() {
-                    if (!$(this).parents(".swiper-slide-active").length) { this.pause(); } }); }).trigger("resize");
-        });
-    }
+
     var o = $("#copyright-year");
     if (o.length) { o.text(initialDate.getFullYear()); }
     if (plugins.circleProgress.length) {
@@ -458,9 +399,7 @@ $document.ready(function() {
         for (i = 0; i < plugins.rdVideoBG.length; i++) {
             var videoItem = $(plugins.rdVideoBG[i]);
             videoItem.RDVideo({}); } }
-    if (plugins.rdNavbar.length) { plugins.rdNavbar.RDNavbar({ stickUpClone: (plugins.rdNavbar.attr("data-stick-up-clone")) ? plugins.rdNavbar.attr("data-stick-up-clone") === 'true' : false, stickUpOffset: (plugins.rdNavbar.attr("data-stick-up-offset")) ? plugins.rdNavbar.attr("data-stick-up-offset") : 1, anchorNavOffset: -78 });
-        if (plugins.rdNavbar.attr("data-body-class")) { document.body.className += ' ' + plugins.rdNavbar.attr("data-body-class"); } }
-    if (plugins.photoSwipeGallery.length) {
+     if (plugins.photoSwipeGallery.length) {
         $document.delegate("[data-photo-swipe-item]", "click", function(event) {
             event.preventDefault();
             var $el = $(this),
@@ -585,7 +524,6 @@ $document.ready(function() {
         for (i = 0; i < plugins.instafeed.length; i++) {
             var instafeedItem = $(plugins.instafeed[i]);
             instafeedItem.RDInstafeed({}); } }
-    if (isDesktop) { $().UItoTop({ easingType: 'easeOutQuart', containerClass: 'ui-to-top icon icon-xs icon-circle icon-darker-filled mdi mdi-chevron-up' }); }
     if (plugins.rdMailForm.length) {
         var i, j, k, msg = { 'MF000': 'Successfully sent!', 'MF001': 'Recipients are not set!', 'MF002': 'Form will not work locally!', 'MF003': 'Please, define email field in your form!', 'MF004': 'Please, define type of your form!', 'MF254': 'Something went wrong with PHPMailer!', 'MF255': 'Aw, snap! Something went wrong.' };
         for (i = 0; i < plugins.rdMailForm.length; i++) {
