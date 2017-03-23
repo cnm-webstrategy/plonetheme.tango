@@ -35,7 +35,11 @@
   <replace css:content="#viewlet-above-content" css:theme="#above-content" />
   <!-- breadcrmbs -->
   <drop css:content="#portal-breadcrumbs" />
-  <drop css:theme="#front-page-slider" css:if-not-content=".section-front-page.template-document_view" />
+  
+  <!-- drop slider if not front page -->
+  <drop 
+    css:theme="#front-page-slider" 
+    css:if-not-content=".section-front-page.template-document_view" />
   <drop css:theme=".brand-before" css:if-content=".section-front-page" />
   <replace css:theme-children=".brand-name" css:content-children=".documentFirstHeading" method="raw" />
   <drop css:content=".documentFirstHeading" css:if-content=".section-front-page" />
@@ -98,4 +102,13 @@
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
   <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
+
+
+  <!-- dynamic slider content -->
+<replace
+  css:theme="#carousel-example-generic"
+  css:content="#carousel-example-generic"
+  href="/slider-images/@@slider-images" />
+Next  Previous
+
 </rules>
