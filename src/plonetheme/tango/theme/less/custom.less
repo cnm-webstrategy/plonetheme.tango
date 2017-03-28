@@ -23,11 +23,45 @@
     }
 }
 
-.plone-toolbar-container {
+.outer-wrapper {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 50;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        left: inherit;
+        right: inherit;
+        width: 100%;
 
+        .navbar-brand {
+            float: none;
+            flex: 1;
+            width: 100%;
+        }
+        .navbar-nav {
+            flex: 1;
+        }
+        ul {
+            list-style: none;
+        }
+    }
+    main {
+        &.container {
+            width: 100%;
+            padding: 0;
+        }
+        .carousel-inner {
+            > .item {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
-
-
 
 // This is for the control panel, b/c all span.labels are white on a white background
 // This may be need to reset for non-control panel labels
@@ -35,28 +69,13 @@ span.label {
     color: #333;
 }
 
-main {
-    &.container {
-        width: 100%;
-        padding:0;
-    }
-}
-
-.carousel-inner {
-    > .item {
-        img {
-            width: 100%;
-        }
-    }
-}
-
 @media (min-width: 1112px) {
-    .plone-toolbar-left-expanded {
-        .container {
-            width: 100%;
-            .col-lg-12 {
-                padding: 0;
-            }
-        }
-    }
+    // .plone-toolbar-left-expanded {
+    //     .container {
+    //         width: 100%;
+    //         .col-lg-12 {
+    //             padding: 0;
+    //         }
+    //     }
+    // }
 }
