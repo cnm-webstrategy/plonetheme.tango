@@ -23,4 +23,7 @@
         $( ".right.carousel-control" ).click(function() {
         	//console.log('clicked');
         })
+
+        // don't display text in icon span tags
+        $('.counter-type-1 .icon').empty();
     });

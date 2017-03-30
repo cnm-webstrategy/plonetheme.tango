@@ -3,6 +3,7 @@
   "name": "plonetheme.tango",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "mdi": "^1.8.36"
   }
 }

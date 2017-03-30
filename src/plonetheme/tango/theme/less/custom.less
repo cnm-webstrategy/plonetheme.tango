@@ -10,6 +10,35 @@ html  {
     *:first-child {
         margin-top: 0;
     }
+    .page {
+        overflow: hidden;
+        background-color: #fff;
+        
+        .text-bold, strong{
+            font-weight: 700;
+        }
+        .offset-top-60 {
+            margin-top: 60px;
+        }
+        .offset-top-65 {
+            margin-top: 65px;
+        }
+        .offset-top-15 {
+            margin-top: 15px;
+        }
+        .offset-top-10 {
+            margin-top: 10px;
+        }
+        .text-madison {
+            color: #7f0909;
+        }
+        .text-primary {
+            color: #f8a427;
+        }
+        .text-black {
+            color: #2d2e2e;
+        }
+    }
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
@@ -31,14 +60,63 @@ h2, .h2 {
     margin-bottom: 29px;
     font-weight: 700;
 }
-
-.page {
-    overflow: hidden;
-    background-color: #fff;
-    
-    .text-bold, strong{
-        font-weight: 700;
+h3, .h3 {
+    font-size: 28px;
+    line-height: 1.5;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+h6, .h6 {
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+.text-primary  {
+        color: #f8a427;
     }
+blockquote{
+    .quote {
+        .text-primary  {
+            color: #f8a427;
+        }
+    }
+}
+
+.font-accent {
+    font-family: "PT Serif", "Times New Roman", Times, serif;
+}
+
+hr {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    border: 0;
+    border-top: 1px solid #f6f7f8;
+    box-sizing: content-box;
+    height: 0;
+}
+
+.divider {
+    width: 50px;
+    height: 3px;
+    padding: 0;
+    margin: 21px auto 21px;
+    background: #b1b1b1;
+    border: none;
+}
+
+.divider-sm {
+    width: 30px;
+}
+
+.bg-madison {
+    background: #7f0909;
+    fill: #7f0909;
+}
+
+.bg-gray-light {
+    background: #e5e5e5;
+    fill: #e5e5e5;
 }
 
 /* TinyMCE templates */
@@ -180,18 +258,84 @@ span.label {
     padding-right: 15px;
 }
 
+.range {
+    margin-left: -15px;
+    margin-right: -15px;
+}
 
-@media (min-width: @screen-md-min ) {
-    .shell, .shell-wide {
-        max-width: 750px;
+// this is just to override an invasive style from default.css
+// that messes with .mdi below
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.mdi {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    transform: translate(0, 0);
+}
+.icon {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    font-style: normal;
+}
+.icon-sm {
+    font-size: 56px;
+    line-height: 56px;
+}
+
+
+[class*="cell-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: @screen-xs-min ) {
+    .range-xs-center {
+        justify-content: center;
     }
-    .section-md-114 {
-        padding-top: 114px;
-        padding-bottom: 114px;
+    .range {
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > [class*='cell'] {
+            flex: 0 0 auto;
+            flex-basis: 100%;
+            max-width: 100%;
+        }
     }
 }
 
 @media (min-width: @screen-sm-min ) {
+    html {
+        .page {
+            .offset-sm-top-0 {
+                margin-top: 0;
+            }
+        }
+    }
     .shell, .shell-wide {
         max-width: 970px;
     }
@@ -202,9 +346,65 @@ span.label {
     line-height: 1.27273;
         font-size: 44px;
     }
-
+    h3, .h3 {
+        line-height: 1.2;
+        font-size: 30px;
+    }
+    h6, .h6 {
+        line-height: 1.22222;
+        font-size: 18px;
+    }
+    .range {
+        > .cell-sm-8 {
+            flex-basis: 66.6667%;
+            max-width: 66.666667%;
+        }
+        .range > [class*='cell'] {
+            flex: 0 0 auto;
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
 
 }
+
+@media (min-width: @screen-md-min ) {
+    html {
+        .page {
+            .offset-md-top-0 {
+                margin-top: 0;
+            }
+        }
+    }
+    .shell, .shell-wide {
+        max-width: 750px;
+    }
+    .section-md-114 {
+        padding-top: 114px;
+        padding-bottom: 114px;
+    }
+    .range-md-left {
+        justify-content: flex-start;
+    }
+    .range {     
+        > .cell-sm-3 {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+        > .cell-md-3 {
+            -webkit-flex-basis: 25%;
+            -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+    }
+    .counters [class*="cell-"] {
+        + [class*="cell-"] {
+            position: relative;
+        }
+    }
+}
+
 
 @media (min-width: @screen-lg-min ) {
     .shell, .shell-wide {
