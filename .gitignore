@@ -34,3 +34,4 @@ report.html
 !.travis.yml
 !src/plonetheme
 node_modules/
+.idea

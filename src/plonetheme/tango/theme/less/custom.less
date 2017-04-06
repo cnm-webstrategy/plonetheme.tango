@@ -141,6 +141,7 @@ hr {
 .outer-wrapper {
     .navbar {
         display: flex;
+        display: none;
         flex-wrap: wrap;
         z-index: 50;
         border-radius: 0;
@@ -228,6 +229,9 @@ hr {
             }
         }
     }
+    #rules-editor {
+        text-align: left;
+    }
 }
 
 // This is for the control panel, b/c all span.labels are white on a white background
@@ -265,45 +269,46 @@ span.label {
 
 // this is just to override an invasive style from default.css
 // that messes with .mdi below
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: inherit;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    display: inline-block;
-    text-decoration: inherit;
-    width: 1em;
-    margin-right: .2em;
-    text-align: center;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1em;
-    margin-left: .2em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.content {
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: .2em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .mdi {
+        display: inline-block;
+        font-weight: 400;
+        font-style: normal;
+        font-family: "Material Design Icons";
+        font-size: inherit;
+        text-rendering: auto;
+        transform: translate(0, 0);
+    }
+    .icon {
+        position: relative;
+        display: inline-block;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 42px;
+        font-style: normal;
+    }
+    .icon-sm {
+        font-size: 56px;
+        line-height: 56px;
+    }
 }
-.mdi {
-    display: inline-block;
-    font-weight: 400;
-    font-style: normal;
-    font-family: "Material Design Icons";
-    font-size: inherit;
-    text-rendering: auto;
-    transform: translate(0, 0);
-}
-.icon {
-    position: relative;
-    display: inline-block;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 42px;
-    font-style: normal;
-}
-.icon-sm {
-    font-size: 56px;
-    line-height: 56px;
-}
-
 
 [class*="cell-"] {
     padding-left: 15px;
