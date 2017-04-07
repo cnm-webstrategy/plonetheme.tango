@@ -1,0 +1,1 @@
+<p tal:content="string:blue">red</p>

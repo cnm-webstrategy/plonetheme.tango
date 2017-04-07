@@ -22,7 +22,7 @@
             name="training"
             for="*"
             template="templates/training.pt"
-            permission="zope2.view"
+            permission="zope2.View"
     />
 
 </configure>
