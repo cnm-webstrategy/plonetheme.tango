@@ -37,14 +37,20 @@
   <drop css:content="#portal-breadcrumbs" />
   
   <!-- drop slider if not front page -->
-  <drop 
-    css:theme="#front-page-slider" 
+  <drop
+    css:theme="#front-page-slider"
     css:if-not-content=".section-front-page.template-document_view" />
   <drop css:theme=".brand-before" css:if-content=".section-front-page" />
   <replace css:theme-children=".brand-name" css:content-children=".documentFirstHeading" method="raw" />
   <drop css:content=".documentFirstHeading" css:if-content=".section-front-page" />
   <replace css:theme="#front-page-slider h2" css:content=".documentDescription" method="raw" />
   <drop css:content=".documentDescription" css:if-content=".section-front-page" />
+
+  <!-- drop right column if  front page -->
+  <!--<drop-->
+        <!--css:theme="#column2-container"-->
+        <!--css:if-content=".section-front-page.template-document_view" />-->
+
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
     <xsl:variable name="central">
@@ -86,6 +92,8 @@
     </replace>
   </rules>
   <!-- Right column -->
+
+
   <rules css:if-content="#portal-column-two">
     <replace css:theme="#column2-container">
       <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas" role="complementary">

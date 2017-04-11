@@ -21,7 +21,17 @@
     <browser:page
             name="training"
             for="*"
+            class=".views.DemoView"
             template="templates/training.pt"
+            permission="zope2.View"
+    />
+
+    <browser:page
+            name="frontpageview"
+            for="*"
+            layer="plonetheme.tango.interfaces.IPlonethemeTangoLayer"
+            class=".frontpage.FrontpageView"
+            template="templates/frontpageview.pt"
             permission="zope2.View"
     />
 
