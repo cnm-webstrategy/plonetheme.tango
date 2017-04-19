@@ -1,4 +1,20 @@
-<table tal:define="talks python:[{'title': 'Dexterity is the new default!',
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ploneconf.site">
+<head>
+    <style>
+    tr.odd {background-color: #ddd;}
+</style>
+</head>
+<body>
+
+<metal:content-core fill-slot="content-core">
+
+
+<table class="listing"
+        tal:define="talks python:[{'title': 'Dexterity is the new default!',
                                   'subjects': ('content-types', 'dexterity')},
                                  {'title': 'Mosaic will be the next big thing.',
                                   'subjects': ('layout', 'deco', 'views'),
@@ -15,17 +31,26 @@
         <th>Title</th>
         <th>Topics</th>
     </tr>
-    <tr tal:repeat="talk talks">
+
+    <?python from operator import itemgetter ?>
+    <tr tal:repeat="talk python:sorted(talks, key=itemgetter('title'))"
+        class=" ${python: 'odd' if repeat.talk.odd else 'even'}">
         <td>
-            <a  tal:define="google_url string https://google.com/search?q=${talk/title}"
-                tal:attributes="href talk/url | href https://google.com/search?q=${talk/title}"
-                tal:content="talk/title">
-                A talk
+            <a  href=" python:talk.get('url', 'https://www.google.com/search?q=%s' % talk['title'])">
+                ${python: talk['title']}
             </a>
         </td>
-        <td tal:define="subjects talk/subjects">
-            <span tal:replace="python:', '.join(subjects)">
-            </span>
+        <td >
+            ${python:', '.join(talk['subjects'])}
         </td>
     </tr>
 </table>
+
+    <div metal:use-macro="context/@@abunchofmacros/my_macro">
+        Instead of this the content of the macro will appear...
+    </div>
+
+</metal:content-core>
+
+</body>
+</html>

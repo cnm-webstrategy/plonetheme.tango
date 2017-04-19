@@ -35,4 +35,11 @@
             permission="zope2.View"
     />
 
+    <browser:page
+            for="*"
+            name="abunchofmacros"
+            template="templates/macros.pt"
+            permission="zope2.View"
+    />
+
 </configure>

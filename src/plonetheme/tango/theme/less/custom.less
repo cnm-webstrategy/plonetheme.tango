@@ -138,10 +138,10 @@ hr {
     }
 }
 
-.outer-wrapper {
+
+.portaltype-document {
     .navbar {
         display: flex;
-        display: none;
         flex-wrap: wrap;
         z-index: 50;
         border-radius: 0;
@@ -250,10 +250,13 @@ span.label {
     fill: #F5F7FA;
 }
 
+
+
 .shell, .shell-wide {
     min-width: 300px;
     max-width: 480px;
 }
+
 
 .shell, .shell-wide, .shell-fluid {
     margin-right: auto;
@@ -301,6 +304,12 @@ span.label {
 [class*="cell-"] {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.template-edit, .portaltype-plone-site {
+    .navbar {
+        display: none;
+    }
 }
 
 @media (min-width: @screen-xs-min ) {

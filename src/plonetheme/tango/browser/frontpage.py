@@ -20,7 +20,7 @@ class FrontpageView(BrowserView):
         for brain in brains:
             results.append({
                 'title': brain.Title,
-                'summary': brain.Summary,
+                'summary': brain.Description,
 
                 })
         return results
