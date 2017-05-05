@@ -14,13 +14,31 @@ class FrontpageView(BrowserView):
         results = []
         today = datetime.date.today()
         brains = api.content.find(
-            portal_type='news_item',
+            portal_type='News Item',
             sort_order='descending',
         )
         for brain in brains:
             results.append({
                 'title': brain.Title,
                 'summary': brain.Description,
+                'url': brain.getURL()
+                })
+        return results
 
+    def slider_images(self):
+        """Get today's news"""
+        results = []
+        portal = api.portal.get()
+        brains = api.content.find(
+            portal_type='Image',
+            sort_order='descending',
+            path=portal['slider-images']
+        )
+        for brain in brains:
+            obj = brain.getObject()
+            results.append({
+                'title': brain.Title,
+                'description': brain.Description,
+                'obj': obj
                 })
         return results

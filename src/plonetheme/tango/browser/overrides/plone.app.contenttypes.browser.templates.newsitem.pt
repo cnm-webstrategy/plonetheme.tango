@@ -13,6 +13,7 @@
   <p>
     ${python: plone_view.toLocalizedTime(context.Date())}
   </p>
+
   <div id="parent-fieldname-text"
       tal:condition="context/text"
       tal:content="structure python:context.text.output_relative_to(view.context)"

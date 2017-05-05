@@ -25,17 +25,18 @@
   <copy attributes="*" css:content="body" css:theme="body" />
   <!-- move global nav
   <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="raw" /> -->
-  <replace css:theme-children=".navbar-nav" css:content-children=".plone-navbar-nav" />
-  <!-- full-width breadcrumb 
-  <replace 
+  <!--<replace css:theme-children=".navbar-nav" css:content-children=".plone-navbar-nav" />-->
+  <drop css:content=".navbar" method="raw"/>
+  <!-- full-width breadcrumb
+  <replace
     css:if-content="body.userrole-authenticated"
-    css:content="#viewlet-above-content" 
+    css:content="#viewlet-above-content"
     css:theme="#above-content" />-->
   <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
   <replace css:content="#viewlet-above-content" css:theme="#above-content" />
   <!-- breadcrmbs -->
   <drop css:content="#portal-breadcrumbs" />
-  
+
   <!-- drop slider if not front page -->
   <drop
     css:theme="#front-page-slider"
