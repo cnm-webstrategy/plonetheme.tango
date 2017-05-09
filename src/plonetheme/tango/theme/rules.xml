@@ -25,8 +25,8 @@
   <copy attributes="*" css:content="body" css:theme="body" />
   <!-- move global nav
   <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="raw" /> -->
-  <!--<replace css:theme-children=".navbar-nav" css:content-children=".plone-navbar-nav" />-->
-  <drop css:content=".navbar" method="raw"/>
+  <replace css:theme-children=".navbar-nav" css:content-children=".plone-navbar-nav" />
+  <!--<drop css:content=".navbar" method="raw"/>-->
   <!-- full-width breadcrumb
   <replace
     css:if-content="body.userrole-authenticated"

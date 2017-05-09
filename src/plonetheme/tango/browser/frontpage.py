@@ -32,7 +32,7 @@ class FrontpageView(BrowserView):
         brains = api.content.find(
             portal_type='Image',
             sort_order='descending',
-            path=portal['slider-images']
+            path=portal['slider-images'].getPhysicalPath()
         )
         for brain in brains:
             obj = brain.getObject()

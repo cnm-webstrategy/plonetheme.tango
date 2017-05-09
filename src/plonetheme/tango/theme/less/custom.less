@@ -13,7 +13,7 @@ html  {
     .page {
         overflow: hidden;
         background-color: #fff;
-        
+
         .text-bold, strong{
             font-weight: 700;
         }
@@ -162,12 +162,12 @@ hr {
             background-color: transparent;
             background-image: none;
             border: 1px solid transparent;
-            border-radius: 4px;     
+            border-radius: 4px;
 
             .icon-bar {
                 background-color: yellow;
 
-            }       
+            }
         }
 
         .navbar-brand {
@@ -175,11 +175,13 @@ hr {
             flex: 1;
             width: 100%;
             height: 100%;
+
             a {
                 display: flex;
 
                 img {
                     height: 100%;
+                    margin-left: 150px;
                 }
                 div {
                     flex:1;
@@ -192,7 +194,7 @@ hr {
                     font-weight: 700;
                 }
             }
-            
+
         }
         .navbar-nav {
             flex: 2 1 auto;
@@ -270,8 +272,8 @@ span.label {
     margin-right: -15px;
 }
 
-// .template-document_view is for non-editing or -admin pages
-.template-document_view {
+
+.template-frontpageview {
 
     .mdi {
         display: inline-block;
@@ -312,7 +314,12 @@ span.label {
     }
 }
 
-@media (min-width: @screen-xs-min ) {
+.navbar-fixed-top {
+  right: inherit;
+  left: inherit;
+}
+
+@media (min-width: 768px ) {
     .range-xs-center {
         justify-content: center;
     }
@@ -330,7 +337,7 @@ span.label {
     }
 }
 
-@media (min-width: @screen-sm-min ) {
+@media (min-width: 888px ) {
     html {
         .page {
             .offset-sm-top-0 {
@@ -370,7 +377,7 @@ span.label {
 
 }
 
-@media (min-width: @screen-md-min ) {
+@media (min-width: 1112px ) {
     html {
         .page {
             .offset-md-top-0 {
@@ -378,37 +385,11 @@ span.label {
             }
         }
     }
-    .shell, .shell-wide {
-        max-width: 750px;
-    }
-    .section-md-114 {
-        padding-top: 114px;
-        padding-bottom: 114px;
-    }
-    .range-md-left {
-        justify-content: flex-start;
-    }
-    .range {     
-        > .cell-sm-3 {
-            flex-basis: 25%;
-            max-width: 25%;
-        }
-        > .cell-md-3 {
-            -webkit-flex-basis: 25%;
-            -ms-flex-preferred-size: 25%;
-            flex-basis: 25%;
-            max-width: 25%;
-        }
-    }
-    .counters [class*="cell-"] {
-        + [class*="cell-"] {
-            position: relative;
-        }
-    }
+
 }
 
 
-@media (min-width: @screen-lg-min ) {
+@media (min-width: 1320px ) {
     .shell, .shell-wide {
         max-width: 1200px;
     }
@@ -416,3 +397,19 @@ span.label {
         display: none;
     }
 }
+
+@media (min-width: @plone-screen-sm-min) { .container {width: @plone-container-sm;}}
+@media (min-width: @plone-screen-md-min) { .container {width: @plone-container-md;}}
+@media (min-width: @plone-screen-lg-min) { .container {width: @plone-container-lg;}}
+
+@media (min-width: @plone-screen-sm-min) { .plone-toolbar-top-default .container {width: @plone-container-sm;}}
+@media(min-width: (@plone-screen-sm-min + @plone-left-toolbar)) { .plone-toolbar-left-default .container {width: (@plone-container-sm);}}
+@media(min-width: (@plone-screen-sm-min + @plone-left-toolbar-expanded)) {.plone-toolbar-left-expanded .container {width: (@plone-container-sm);}}
+
+@media (min-width: @plone-screen-md-min) {.plone-toolbar-top-default .container {width: @plone-container-md;}}
+@media(min-width: (@plone-screen-md-min + @plone-left-toolbar)) {.plone-toolbar-left-default .container {width: (@plone-container-md);}}
+@media(min-width: (@plone-screen-md-min + @plone-left-toolbar-expanded)) {.plone-toolbar-left-expanded .container {width: (@plone-container-md);}}
+
+@media (min-width: @plone-screen-lg-min) {	.plone-toolbar-top-default .container {width: @plone-container-lg;}	}
+@media(min-width: (@plone-screen-lg-min + @plone-left-toolbar)) { .plone-toolbar-left-default .container {width: (@plone-container-lg);}}
+@media(min-width: (@plone-screen-lg-min + @plone-left-toolbar-expanded)) {.plone-toolbar-left-expanded .container {width: (@plone-container-lg);}}

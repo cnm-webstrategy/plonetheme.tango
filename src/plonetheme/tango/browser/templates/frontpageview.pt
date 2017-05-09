@@ -1,40 +1,107 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:metal="http://xml.zope.org/namespaces/metal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    lang="en"
-    metal:use-macro="context/main_template/macros/master"
-    i18n:domain="plone">
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="plone">
 <body>
 
 <metal:content-core fill-slot="content-core">
-<div id="carousel-example-generic" class="carousel slide">
- <!-- Indicators -->
- <ol class="carousel-indicators hidden-xs">
-     <li tal:repeat="item view/slider_images"
-         data-target="#carousel-example-generic"
-         data-slide-to="${python:repeat.item.index}"
-         class="${python: repeat.item.start and 'active' or ''}"></li>
- </ol>
+    <div id="carousel-example-generic" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators hidden-xs">
+            <li tal:repeat="item view/slider_images"
+                    data-target="#carousel-example-generic"
+                    data-slide-to="${python:repeat.item.index}"
+                    class="${python: repeat.item.start and 'active' or ''}"></li>
+        </ol>
 
- <!-- Wrapper for slides -->
- <div class="carousel-inner">
-     <div tal:repeat="item view/slider_images"
-         class="item ${python: repeat.item.start and 'active' or ''}">
-         <img tal:define="scales item/obj/@@images"
-             tal:replace="structure python: scales.tag('image', scale='large', css_class='img-responsive img-full')" />
-     </div>
- </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div tal:repeat="item view/slider_images"
+                    class="item ${python: repeat.item.start and 'active' or ''}">
+                <img tal:define="scales item/obj/@@images"
+                         tal:replace="structure python: scales.tag('image', scale='large', css_class='img-responsive img-full')" />
+            </div>
+        </div>
 
- <!-- Controls -->
- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-     <span class="icon-prev"></span>
- </a>
- <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-     <span class="icon-next"></span>
- </a>
-</div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
 
+    <!-- statistics block-->
+    <section class="section-70 section-md-114 bg-catskill  text-center">
+        <div class="shell">
+            <h2 class="text-bold">School Advantages</h2>
+            <hr class="divider bg-madison"/>
+            <div class="range range-xs-center offset-top-60">
+                <div class="cell-xs-10 cell-sm-8">
+                    <p>Concord High School was founded on the principle that by pursuing big ideas and sharing what we
+                        learn, we make the world a better place. For more than 135 years, we haven’t strayed from that
+                        vision.</p>
+                </div>
+            </div>
+            <div class="range range-xs-center range-md-left offset-top-65 counters">
+                <div class="cell-sm-6 cell-md-3">
+                    <div class="counter-type-1"><span class="icon icon-sm text-madison mdi mdi-school">⁣</span>
+                        <div class="h3 text-bold text-primary offset-top-15">
+                            <span class="counter animated-first"
+                                  data-speed="1300" data-from="0"
+                                  tal:attributes="data-to context/graduates"
+                                  >xx</span><span
+                                class="percent">%</span></div>
+                        <hr class="divider bg-gray-light divider-sm"/>
+                        <div class="offset-top-10">
+                            <h6 class="text-black font-accent">Graduates</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell-sm-6 cell-md-3 offset-top-65 offset-sm-top-0">
+                    <div class="counter-type-1"><span class="icon icon-sm text-madison mdi mdi-wallet-travel">please don't delete me</span>
+                        <div class="h3 text-bold text-primary offset-top-15"><span class="counter animated-first"
+                                                                                   data-speed="1250" data-from="0"
+                                                                                   data-to="30">30</span>+
+                        </div>
+                        <hr class="divider bg-gray-light divider-sm"/>
+                        <div class="offset-top-10">
+                            <h6 class="text-black font-accent">Certified Teachers</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell-sm-6 cell-md-3 offset-top-65 offset-md-top-0">
+                    <div class="counter-type-1"><span class="icon icon-sm text-madison mdi mdi-domain">please don't delete me</span>
+                        <div class="h3 text-bold text-primary offset-top-15"><span class="counter animated-first"
+                                                                                   data-step="1500" data-from="0"
+                                                                                   data-to="8">8</span></div>
+                        <hr class="divider bg-gray-light divider-sm"/>
+                        <div class="offset-top-10">
+                            <h6 class="text-black font-accent">Student Campuses</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell-sm-6 cell-md-3 offset-top-65 offset-md-top-0">
+                    <div class="counter-type-1"><span
+                            class="icon icon-sm text-madison mdi mdi-account-multiple-outline">please don't delete me</span>
+                        <div class="h3 text-bold text-primary offset-top-15"><span class="counter animated-first"
+                                                                                   data-step="500" data-from="0"
+                                                                                   data-to="6510">6510</span></div>
+                        <hr class="divider bg-gray-light divider-sm"/>
+                        <div class="offset-top-10">
+                            <h6 class="text-black font-accent">Students</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News-->
     <tal:block repeat="news view/news">
         <h3 tal:content="news/title">title</h3>
         <a tal:content="news/title" tal:attributes="href news/url" ></a>
