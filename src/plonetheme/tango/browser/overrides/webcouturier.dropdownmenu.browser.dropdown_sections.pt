@@ -56,7 +56,7 @@
                   <tal:subitems tal:replace="structure subitems">
                     <tal:comment replace="nothing">Submenu</tal:comment>
                   </tal:subitems>
-                      <li>call to action here</li>
+                      <!--?<li>call to action here</li>-->
                   </ul>
                   </tal:block>
               </li>

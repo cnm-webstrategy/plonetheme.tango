@@ -2,7 +2,7 @@
     	console.clear();
         $(window).scroll(function(event) {
             var pxToTop = $(window).scrollTop();
-            
+
             // if (pxToTop > 120) {
             //     console.log('greater')
             //     $('.navbar-nav li').animate({'padding-top': '2em'}, "slow")
@@ -11,10 +11,10 @@
             //     $('.navbar-nav li').animate({'padding-top': '5.5em'}, "slow")
             // }
             if (pxToTop > 120) {
-                $('.navbar-nav li').css('padding-top', '2em')
+                //$('.navbar-nav li').css('padding-top', '2em')
             }
             if (pxToTop < 120) {
-                $('.navbar-nav li').css('padding-top', '5.5em')
+                // $('.navbar-nav li').css('padding-top', '5.5em')
             }
         });
         $("#carousel-example-generic").carousel();
