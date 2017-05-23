@@ -26,7 +26,6 @@ class FrontpageView(BrowserView):
         return results
 
     def slider_images(self):
-        """Get today's news"""
         results = []
         portal = api.portal.get()
         brains = api.content.find(

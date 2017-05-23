@@ -142,7 +142,7 @@ hr {
   }
 }
 
-.portaltype-document {
+.template-frontpageview {
   .navbar {
     display: flex;
     flex-wrap: wrap;
@@ -312,12 +312,11 @@ span.label {
 .navbar-fixed-top {
   right: inherit;
   left: inherit;
-  margin-left: 200px;
 }
 
 .plone-navbar-nav {
   > .plone-navbar-nav {
-    > .selected{
+    > .selected {
       > a {
 
       }
@@ -331,16 +330,8 @@ span.label {
         }
       }
     }
-    .submenu {
-      background-color: #007bb1;
-      display: none;
-      list-style: none;
-      padding-left: 0;
-      padding-bottom: 0;
-      position: absolute;
-      z-index: 9999;
-
-      &.dropdown-menu {
+    &#portaltab-programs-classes {
+      .dropdown-menu {
         width: 600px;
         left: -200px;
 
@@ -358,6 +349,16 @@ span.label {
           }
         }
       }
+    }
+
+    .submenu {
+      background-color: #007bb1;
+      display: none;
+      list-style: none;
+      padding-left: 0;
+      padding-bottom: 0;
+      position: absolute;
+      z-index: 9999;
 
       a {
         color: white;
@@ -391,6 +392,19 @@ span.label {
       left: inherit;
     }
   }
+}
+
+#content-header {
+  display: flex;
+  #portal-logo {
+    margin: 0;
+
+    .navbar-brand {
+      float: none;
+    }
+
+  }
+
 }
 
 @media (min-width: 768px ) {
@@ -467,6 +481,11 @@ span.label {
     }
   }
 
+  .range > [class*='cell'] {
+    flex: 1 0 auto;
+    flex-basis: inherit;
+  }
+
 }
 
 @media (min-width: 1320px ) {
@@ -521,18 +540,7 @@ span.label {
   }
 
   header {
-    &#content-header {
-      display: flex;
 
-      #portal-header {
-        margin: 0;
-
-        .navbar-brand {
-          float: none;
-        }
-
-      }
-    }
   }
 }
 
