@@ -40,12 +40,15 @@
   <!-- drop slider if not front page -->
   <drop
     css:theme="#front-page-slider"
-    css:if-not-content=".section-front-page.template-document_view" />
-  <drop css:theme=".brand-before" css:if-content=".section-front-page" />
+    css:if-not-content=".section-the-new-frontpage.template-frontpageview" />
+  <drop css:theme=".brand-before" css:if-content=".section-the-new-frontpage" />
+  <drop
+    css:theme=".brand-name"
+    css:if-content=".section-the-new-frontpage" />
   <replace css:theme-children=".brand-name" css:content-children=".documentFirstHeading" method="raw" />
-  <drop css:content=".documentFirstHeading" css:if-content=".section-front-page" />
+  <drop css:content=".documentFirstHeading" css:if-content=".section-the-new-frontpage" />
   <replace css:theme="#front-page-slider h2" css:content=".documentDescription" method="raw" />
-  <drop css:content=".documentDescription" css:if-content=".section-front-page" />
+  <drop css:content=".documentDescription" css:if-content=".section-the-new-frontpage" />
 
   <!-- drop right column if  front page -->
   <!--<drop-->
