@@ -221,14 +221,7 @@ hr {
   }
   main {
 
-    .carousel-inner {
-      > .item {
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
+
   }
   #rules-editor {
     text-align: left;
@@ -407,6 +400,15 @@ span.label {
 
 }
 
+.carousel-inner {
+  > .item {
+    > img {
+      width: 100%;
+      height: auto;
+      max-height: 648px;
+    }
+  }
+}
 @media (min-width: 768px ) {
   .range-xs-center {
     justify-content: center;

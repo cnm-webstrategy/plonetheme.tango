@@ -103,8 +103,10 @@
 
     <!-- News-->
     <tal:block repeat="news view/news">
-        <h3 tal:content="news/title">title</h3>
-        <a tal:content="news/title" tal:attributes="href news/url" ></a>
+        <div class="container">
+            <h3 tal:content="news/title">title</h3>
+            <a tal:content="news/title" tal:attributes="href news/url" ></a>
+        </div>
     </tal:block>
 </metal:content-core>
 
