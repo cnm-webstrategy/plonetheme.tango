@@ -221,7 +221,6 @@ hr {
   }
   main {
 
-
   }
   #rules-editor {
     text-align: left;
@@ -388,15 +387,6 @@ span.label {
 }
 
 #content-header {
-  display: flex;
-  #portal-logo {
-    margin: 0;
-
-    .navbar-brand {
-      float: none;
-    }
-
-  }
 
 }
 
@@ -409,40 +399,53 @@ span.label {
     }
   }
 }
+
 @media (min-width: 768px ) {
-  .range-xs-center {
-    justify-content: center;
-  }
 
-  .range {
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    > [class*='cell'] {
-      flex: 0 0 auto;
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-  }
 }
 
 @media (min-width: 888px ) {
+
+}
+
+@media (min-width: 1112px ) {
   html {
     .page {
-      .offset-sm-top-0 {
+      .offset-md-top-0 {
         margin-top: 0;
       }
     }
   }
 
-  .shell, .shell-wide {
-    max-width: 970px;
+}
+
+@media (min-width: 1320px ) {
+
+}
+
+@media (min-width: @plone-screen-sm-min) {
+  .container {
+    width: @plone-container-sm;
   }
 
-  .navbar-toggle {
-    display: inline-block;
+  #content-header {
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    width: @plone-container-sm;
+    left: 50%;
+    margin-left: (@plone-container-sm / 2 ) * -1;
+    #portal-logo {
+      margin: 0;
+
+      .navbar-brand {
+        float: none;
+      }
+
+    }
+    .navbar-toggle {
+      display: none;
+    }
   }
 
   h2, .h2 {
@@ -460,6 +463,32 @@ span.label {
     font-size: 18px;
   }
 
+  .range-xs-center {
+    justify-content: center;
+  }
+
+  .range {
+    display: flex;
+    div {
+      flex: 1 auto;
+    }
+  }
+}
+
+// 992
+@media (min-width: @plone-screen-md-min) {
+  .container {
+    width: @plone-container-md;
+  }
+
+  html {
+    .page {
+      .offset-sm-top-0 {
+        margin-top: 0;
+      }
+    }
+  }
+
   .range {
     > .cell-sm-8 {
       flex-basis: 66.6667%;
@@ -470,45 +499,6 @@ span.label {
       flex-basis: 100%;
       max-width: 100%;
     }
-  }
-
-}
-
-@media (min-width: 1112px ) {
-  html {
-    .page {
-      .offset-md-top-0 {
-        margin-top: 0;
-      }
-    }
-  }
-
-  .range > [class*='cell'] {
-    flex: 1 0 auto;
-    flex-basis: inherit;
-  }
-
-}
-
-@media (min-width: 1320px ) {
-  .shell, .shell-wide {
-    max-width: 1200px;
-  }
-
-  .navbar-toggle {
-    display: none;
-  }
-}
-
-@media (min-width: @plone-screen-sm-min) {
-  .container {
-    width: @plone-container-sm;
-  }
-}
-
-@media (min-width: @plone-screen-md-min) {
-  .container {
-    width: @plone-container-md;
   }
 }
 
@@ -561,6 +551,11 @@ span.label {
 @media (min-width: @plone-screen-lg-min) {
   .plone-toolbar-top-default .container {
     width: @plone-container-lg;
+  }
+
+  .range > [class*='cell'] {
+    flex: 1 0 auto;
+    flex-basis: inherit;
   }
 }
 
