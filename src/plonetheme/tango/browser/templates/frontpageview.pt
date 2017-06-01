@@ -98,6 +98,11 @@
         </div>
     </section>
 
+    <!--?parallax scroller-->
+    <section class="parallax">
+
+    </section>
+
     <!-- News-->
     <tal:block repeat="news view/news">
         <div class="container">
